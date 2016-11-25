@@ -11,6 +11,9 @@ public class Run {
 String st="";
 InputStream is=System.in;
 Reader r=new InputStreamReader(is);
+System.out.print("Привет!Вводите математические выражения в REPL\n"+
+"Нажмите q для выхода.\n"+"Поддерживаются операции +,-,*,/ ^ ()\n"+
+"pi число pi,e число експоненты:\n");
 System.out.println("REPL input:");
 while(!st.equals("q")){
     try{
@@ -20,6 +23,7 @@ while(!st.equals("q")){
 //String file = "D:\\NetBeansProjects\\firstAntlr\\build\\classes\\test.ko";
 //CharStream cs = new ANTLRFileStream(file);
 ///////////////////////////////////////////////////////////////////////////
+
 CharStream input = new ANTLRInputStream(st);
         CalculatorLexer lexer = new CalculatorLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -29,6 +33,7 @@ CharStream input = new ANTLRInputStream(st);
         CalculatorBaseVisitorImpl calcVisitor = new CalculatorBaseVisitorImpl();
         
         if(!st.equals("q")){
+        //System.out.println(tree.toStringTree(parser));         
         Double result = calcVisitor.visit(tree);
         System.out.println("Result: " + result);
         }

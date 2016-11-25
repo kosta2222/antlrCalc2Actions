@@ -1,4 +1,4 @@
-grammar Calculator;
+8grammar Calculator;
 INT    : [0-9]+;
 DOUBLE : [0-9]+'.'[0-9]+;
 PI     : 'pi';
